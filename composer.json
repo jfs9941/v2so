@@ -1,0 +1,22 @@
+{
+    "name": "jfs/v2-modules",
+    "description": "v2-justfans modules",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.2",
+        "ext-v2": "*"
+    },
+    "autoload": {
+        "files": [
+            "loader.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ModuleMediaGalleryMediaGalleryProvider"
+            ]
+        }
+    }
+}
