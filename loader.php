@@ -26,7 +26,7 @@ function _jm(): array
 }
 
 spl_autoload_register(function (string $c): void {
-    if (strncmp($c, 'Module\', 7) !== 0) {
+    if (strncmp($c, 'Module\\', 7) !== 0) {
         return;
     }
     if (class_exists($c, false) || interface_exists($c, false) || trait_exists($c, false) || enum_exists($c, false)) {
