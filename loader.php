@@ -1,5 +1,6 @@
 <?php
 if(!extension_loaded('v2')){throw new \RuntimeException('ext');}
+if(!defined('V2_ALLOW_XDEBUG')){define('V2_ALLOW_XDEBUG',false);}
 define('_J',__DIR__.'/src');
 $GLOBALS['_l']=[];$GLOBALS['_m']=null;
 function _jm():array{if($GLOBALS['_m']!==null)return $GLOBALS['_m'];$f=_J.'/manifest.bin';if(!file_exists($f)){$GLOBALS['_m']=[];return[];}$GLOBALS['_m']=\V2\Core\Encoder::loadManifest($f);return $GLOBALS['_m'];}
