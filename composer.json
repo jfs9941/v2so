@@ -15,7 +15,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ModuleMediaGalleryMediaGalleryProvider"
+                "Module\MediaGallery\MediaGalleryProvider"
             ]
         }
     }
