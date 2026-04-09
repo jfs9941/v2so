@@ -5,7 +5,7 @@ if (!extension_loaded('jfs')) {
 }
 
 if (!defined('ALLOW_XDEBUG')) {
-    define('ALLOW_XDEBUG', false);
+    define('ALLOW_XDEBUG', true);
 }
 
 define('_J', __DIR__ . '/src');
