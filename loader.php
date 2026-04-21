@@ -1,7 +1,6 @@
 <?php
 
 if (!extension_loaded('jfs')) {
-    trigger_error('jfs: extension not loaded', E_USER_WARNING);
     return;
 }
 
@@ -73,13 +72,11 @@ function jfs_require_encrypted(string $r): mixed
 
     $m = _jm();
     if (!isset($m[$r])) {
-        trigger_error("jfs: missing manifest entry {$r}", E_USER_WARNING);
         return null;
     }
 
     $e = _J . '/' . $m[$r]['file'];
     if (!file_exists($e)) {
-        trigger_error("jfs: missing encrypted file {$e}", E_USER_WARNING);
         return null;
     }
 
