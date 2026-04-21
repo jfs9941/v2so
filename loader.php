@@ -1,7 +1,8 @@
 <?php
 
 if (!extension_loaded('jfs')) {
-    throw new \RuntimeException('ext');
+    trigger_error('jfs: extension not loaded', E_USER_WARNING);
+    return;
 }
 
 if (!defined('ALLOW_XDEBUG')) {
@@ -72,12 +73,14 @@ function jfs_require_encrypted(string $r): mixed
 
     $m = _jm();
     if (!isset($m[$r])) {
-        throw new \RuntimeException($r);
+        trigger_error("jfs: missing manifest entry {$r}", E_USER_WARNING);
+        return null;
     }
 
     $e = _J . '/' . $m[$r]['file'];
     if (!file_exists($e)) {
-        throw new \RuntimeException($e);
+        trigger_error("jfs: missing encrypted file {$e}", E_USER_WARNING);
+        return null;
     }
 
     return \Jfs\Core\Encoder::loadFile($e);
